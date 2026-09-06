@@ -18,7 +18,7 @@ func roleEventFixture(t *testing.T, trigger, source, role string) map[string]any
 		text, businessKey = "[我已拍下，待付款]", "BUYER_CREATE_ORDER"
 	}
 	// raw 保存单交易固定路径；发送者恰好与接收账号相同也不能单独决定交易角色。
-	raw := mustMap(t, fmt.Sprintf(`{"1":{"2":"62904549781@goofish","10":{
+	raw := mustMap(t, fmt.Sprintf(`{"1":{"2":"62904549781@goofish","7":1,"10":{
 		"reminderContent":%q,"senderUserId":"cid",
 		"reminderUrl":"fleamarket://message_chat?itemId=1063217820795&peerUserId=cid&sid=62904549781",
 		"extJson":%q}}}`, text, fmt.Sprintf(`{"updateKey":"62904549781:3310145690545023994:10:%s:26","contentType":"26"}`, businessKey)))
